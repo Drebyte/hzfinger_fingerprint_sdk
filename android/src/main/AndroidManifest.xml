@@ -1,0 +1,31 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.drebyte.hzfinger_fingerprint_sdk">
+
+    <!-- 1. Add this to declare the app uses a USB host, but it's not strictly required -->
+    <uses-feature android:name="android.hardware.usb.host" android:required="false" />
+
+    <application>
+        <!-- 2. This activity section allows your app to be launched
+               when the USB device is plugged in -->
+        <activity android:name="com.drebyte.hzfinger_fingerprint_sdk.HzfingerFingerprintSdkPlugin"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+
+            <meta-data android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/device_filter" />
+        </activity>
+
+        <!-- 3. This receiver listens for the permission popup
+               that HostUsb.java tries to show -->
+        <receiver android:name=".UsbPermissionReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.HZFINGER.USB_PERMISSION"/>
+            </intent-filter>
+        </receiver>
+
+    </application>
+</manifest>
+
