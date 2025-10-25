@@ -1,6 +1,6 @@
 name: hzfinger_fingerprint_sdk
 description: "A Flutter plugin for integrating HZFinger Q818 and compatible fingerprint scanners with Android devices. This SDK provides a high-level API to capture, enroll, verify, and manage fingerprint data directly from Flutter apps, using the native HZFinger hardware SDK through platform channels."
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/drebyte/hzfinger_fingerprint_sdk
 repository: https://github.com/drebyte/hzfinger_fingerprint_sdk
 issue_tracker: https://github.com/drebyte/hzfinger_fingerprint_sdk/issues 
